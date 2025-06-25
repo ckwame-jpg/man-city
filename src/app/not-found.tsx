@@ -1,7 +1,9 @@
 // src/app/not-found.tsx
 // src/app/not-found.tsx
+// src/app/not-found.tsx
 "use client";
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 
 export default function NotFound() {
   return (
@@ -15,12 +17,12 @@ export default function NotFound() {
         404
       </h1>
       <p className="text-lg text-[#F5F5F5]/70 mb-6">This page doesn’t exist — or it’s lost in the void.</p>
-      <a
+      <Link
         href="/"
         className="px-4 py-2 border border-[#575365] hover:bg-[#2B2E3B] transition rounded text-sm"
       >
         Back to home
-      </a>
+      </Link>
       <style jsx>{`
         .glitch {
           position: relative;
