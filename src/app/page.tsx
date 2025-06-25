@@ -1,7 +1,6 @@
 'use client';
 import { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
-import { metadata } from './metadata';
 export default function Home() {
   const mainRef = useRef<HTMLDivElement>(null);
   const experienceRef = useRef<HTMLElement>(null);
