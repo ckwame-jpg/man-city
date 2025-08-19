@@ -222,20 +222,6 @@ export default function Home() {
                   <path d="M12 0C5.373 0 0 5.373 0 12a12.013 12.013 0 008.208 11.385c.6.111.82-.26.82-.577v-2.065c-3.338.726-4.043-1.61-4.043-1.61-.546-1.387-1.334-1.756-1.334-1.756-1.091-.745.083-.73.083-.73 1.205.084 1.84 1.238 1.84 1.238 1.072 1.835 2.812 1.305 3.498.998.108-.777.419-1.305.76-1.604-2.665-.304-5.466-1.333-5.466-5.933 0-1.31.469-2.381 1.235-3.22-.123-.304-.535-1.523.117-3.176 0 0 1.007-.322 3.3 1.23a11.487 11.487 0 016.003 0c2.292-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.872.12 3.176.769.839 1.233 1.91 1.233 3.22 0 4.61-2.803 5.625-5.475 5.921.43.37.813 1.103.813 2.222v3.293c0 .32.218.694.825.576A12.015 12.015 0 0024 12c0-6.627-5.373-12-12-12z"/>
                 </svg>
               </a>
-
-              {/* Optional live demo link */}
-              <a
-                href="https://fantasy-tool-4gbiq4tuq-chris-prempehs-projects.vercel.app"
-                className="inline-block ml-3 text-[#F5F5F5] hover:text-white transition-transform hover:scale-110"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Live Demo"
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
-                  <path d="M14 3h7v7h-2V6.414l-9.293 9.293-1.414-1.414L17.586 5H14V3z" />
-                  <path d="M5 5h5V3H3v7h2V5zm0 14v-5H3v7h7v-2H5z" />
-                </svg>
-              </a>
             </motion.div>
           </section>
 
