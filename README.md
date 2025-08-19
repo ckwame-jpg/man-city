@@ -2,6 +2,14 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## Getting Started
 
+Create a `.env.local` (you can copy from `.env.example`):
+
+```
+NEXT_PUBLIC_SITE_URL=http://localhost:3000
+```
+
+On Vercel, set `NEXT_PUBLIC_SITE_URL` to your production domain, e.g. `https://chrisprem.xyz`.
+
 First, run the development server:
 
 ```bash
@@ -34,3 +42,6 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+Environment variables on Vercel:
+- `NEXT_PUBLIC_SITE_URL` = your production domain (e.g., `https://chrisprem.xyz`)

@@ -164,10 +164,10 @@ export default function Home() {
               A developer who building secure, scalable systems that don’t break under pressure. At the moment I’m at the tail end of my BS in CompSci while steadily building a portfolio of different projects.
             </p>
             <p>
-              Currently working in an environment where precision and reliability mattered trying to keep referees happy and pro soccer matches running smoothly as a VAR Tech Manager. It's definitely sharpened how I think about systems, pressure, and user expectations and that mindset carries into my code.
+              Currently working in an environment where precision and reliability mattered trying to keep referees happy and pro soccer matches running smoothly as a VAR Tech Manager. It&apos;s definitely sharpened how I think about systems, pressure, and user expectations and that mindset carries into my code.
             </p>
             <p>
-              Outside of work I'm a sports fanatic; Open to any sports debate as long as we can agree that Lebron and Messi are the GOATs. Feel free to connect or shoot me a message on my LinkedIn in regards to any questions, comments, or concerns.
+              Outside of work I&apos;m a sports fanatic; Open to any sports debate as long as we can agree that Lebron and Messi are the GOATs. Feel free to connect or shoot me a message on my LinkedIn in regards to any questions, comments, or concerns.
             </p>
           </section>
 
