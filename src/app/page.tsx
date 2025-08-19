@@ -69,22 +69,6 @@ export default function Home() {
           </button>
         </div>
       </div>
-      {!menuOpen && (
-        <div className="md:hidden fixed top-16 left-0 right-0 z-40 px-6 py-3">
-          <a
-            href="https://fantasy-tool-4gbiq4tuq-chris-prempehs-projects.vercel.app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-md border border-white/10 bg-white/5 px-4 py-2 text-[#F5F5F5] hover:bg-white/10 hover:text-white transition"
-          >
-            <span>Live demo: Fantasy Tool</span>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4">
-              <path d="M14 3h7v7h-2V6.414l-9.293 9.293-1.414-1.414L17.586 5H14V3z" />
-              <path d="M5 5h5V3H3v7h2V5zm0 14v-5H3v7h7v-2H5z" />
-            </svg>
-          </a>
-        </div>
-      )}
       {menuOpen && (
         <div className="md:hidden fixed top-16 left-0 right-0 bg-[#011128] z-40 border-t border-white/10 px-6 py-6 space-y-4 text-[#F5F5F5] text-base">
           <a
@@ -130,20 +114,7 @@ export default function Home() {
           <div className="flex flex-col items-start justify-start flex-grow pt-0 space-y-1">
             <h1 className="text-6xl font-bold text-[#F5F5F5]">Chris Prempeh</h1>
             <h2 className="text-xl text-[#F5F5F5]/80 mt-2">Technical Manager</h2>
-            <p className="text-[#F5F5F5]/60 mt-4 text-base mb-22">Future developer currently building backend systems that are reliable, clean, and built to scale.</p>
-            <a
-              href="https://fantasy-tool-4gbiq4tuq-chris-prempehs-projects.vercel.app"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Open Fantasy Tool live demo in a new tab"
-              className="mt-2 inline-flex items-center gap-2 rounded-md border border-white/10 bg-white/5 px-4 py-2 text-[#F5F5F5] hover:bg-white/10 hover:text-white transition"
-            >
-              <span>Live demo: Fantasy Tool</span>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4">
-                <path d="M14 3h7v7h-2V6.414l-9.293 9.293-1.414-1.414L17.586 5H14V3z" />
-                <path d="M5 5h5V3H3v7h2V5zm0 14v-5H3v7h7v-2H5z" />
-              </svg>
-            </a>
+            <p className="text-[#F5F5F5]/60 mt-4 text-base mb-22">Developer currently building backend systems that are reliable, clean, and built to scale.</p>
             <div className="space-y-6 text-base text-[#F5F5F5]/60 font-medium">
               {[
                 { id: 'about', label: 'about' },
@@ -190,13 +161,13 @@ export default function Home() {
         <div className="space-y-32">
           <section id="about" className="scroll-mt-16 space-y-4 text-base sm:text-lg text-[#F5F5F5]/80">
             <p>
-              A developer who building secure, scalable systems that don&apos;t break under pressure. At the moment I&apos;m at the tail end of my BS in CompSci while steadily building a portfolio of different projects.
+              A developer who building secure, scalable systems that don’t break under pressure. At the moment I’m at the tail end of my BS in CompSci while steadily building a portfolio of different projects.
             </p>
             <p>
-              Currently working in an environment where precision and reliability mattered trying to keep referees happy and pro soccer matches running smoothly as a VAR Tech Manager. It&apos;s definitely sharpened how I think about systems, pressure, and user expectations and that mindset carries into my code.
+              Currently working in an environment where precision and reliability mattered trying to keep referees happy and pro soccer matches running smoothly as a VAR Tech Manager. It's definitely sharpened how I think about systems, pressure, and user expectations and that mindset carries into my code.
             </p>
             <p>
-              Outside of work I&apos;m a sports fanatic; Open to any sports debate as long as we can agree that Lebron and Messi are the GOATs. Feel free to connect or shoot me a message on my LinkedIn in regards to any questions, comments, or concerns.
+              Outside of work I'm a sports fanatic; Open to any sports debate as long as we can agree that Lebron and Messi are the GOATs. Feel free to connect or shoot me a message on my LinkedIn in regards to any questions, comments, or concerns.
             </p>
           </section>
 
@@ -234,7 +205,7 @@ export default function Home() {
               transition={{ duration: 0.6, ease: 'easeOut' }}
               viewport={{ once: true }}
             >
-              <h3 className="text-2xl font-bold text-[#F5F5F5]">Fantasy Football Tool</h3>
+              <h3 className="text-2xl font-bold text-[#F5F5F5]">fantasy football app</h3>
               <p className="text-[#F5F5F5]/80 mt-2 text-base">
                 A full-stack fantasy football app with sortable draftboard, tiers (T1–T4), favorites by year, and live stat columns (fantasy, rushing, receiving, passing). FastAPI backend + Next.js/TypeScript frontend with Tailwind CSS.
               </p>
