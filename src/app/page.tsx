@@ -168,7 +168,7 @@ export default function Home() {
               Right now I’m working as a VAR Tech Manager. I make sure pro soccer matches stay on track and referees stay sane. The job sharpened how I think about systems, pressure, and end users, and that mindset carries over into how I write code.
             </p>
             <p>
-              Off the clock, I’m a sports junkie. Always down for a good debate, as long as we agree that LeBron and Messi are the GOATs. Feel free to reach out or connect with me on LinkedIn for questions, collabs, or just to talk shop.
+              Off the clock, I’m a sports junkie. Always down for a good debate, as long as we agree that LeBron and Messi are the GOATs. Feel free to reach out or connect with me on LinkedIn.
             </p>
           </section>
 
