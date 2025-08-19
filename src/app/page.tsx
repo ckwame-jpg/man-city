@@ -162,13 +162,13 @@ export default function Home() {
         <div className="space-y-32">
           <section id="about" className="scroll-mt-16 space-y-4 text-base sm:text-lg text-[#F5F5F5]/80">
             <p>
-              A developer who building secure, scalable systems that don’t break under pressure. At the moment I’m at the tail end of my BS in CompSci while steadily building a portfolio of different projects.
+              A developer focused on building secure, scalable systems that don’t fold under pressure. I’m currently wrapping up my BS in CompSci while steadily putting together a portfolio of real, working projects.
             </p>
             <p>
-              Currently working in an environment where precision and reliability mattered trying to keep referees happy and pro soccer matches running smoothly as a VAR Tech Manager. It&apos;s definitely sharpened how I think about systems, pressure, and user expectations and that mindset carries into my code.
+              Right now I’m working as a VAR Tech Manager. I make sure pro soccer matches stay on track and referees stay sane. The job sharpened how I think about systems, pressure, and end users, and that mindset carries over into how I write code.
             </p>
             <p>
-              Outside of work I&apos;m a sports fanatic; Open to any sports debate as long as we can agree that Lebron and Messi are the GOATs. Feel free to connect or shoot me a message on my LinkedIn in regards to any questions, comments, or concerns.
+              Off the clock, I’m a sports junkie. Always down for a good debate, as long as we agree that LeBron and Messi are the GOATs. Feel free to reach out or connect with me on LinkedIn for questions, collabs, or just to talk shop.
             </p>
           </section>
 
@@ -215,7 +215,7 @@ export default function Home() {
               {fantasyDemoUrl && (
                 <a
                   href={fantasyDemoUrl}
-                  className="inline-block mt-4 text-[#F5F5F5] hover:text-white transition-transform hover:scale-110"
+                  className="inline-block mt-4 mr-4 text-[#F5F5F5] hover:text-white transition-transform hover:scale-110"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Live Demo"
