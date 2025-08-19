@@ -1,5 +1,4 @@
 'use client';
-import Head from 'next/head';
 import { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 export default function Home() {
@@ -44,18 +43,7 @@ export default function Home() {
 
   return (
     <>
-      <Head>
-        <title>Chris Prempeh – Backend Developer Portfolio</title>
-        <meta name="description" content="Portfolio of Chris Prempeh – a backend-focused developer building reliable and scalable systems." />
-        <meta property="og:title" content="Chris Prempeh – Backend Developer Portfolio" />
-        <meta property="og:description" content="Backend-focused developer building secure, scalable systems. Explore projects, experience, and more." />
-        <meta property="og:image" content="/og-image.png" />
-        <meta property="og:url" content="https://chrisprem.xyz" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-      </Head>
-      <div className="font-sans" style={{ fontFamily: "'Calibre', 'Inter', 'San Francisco', 'SF Pro Text', -apple-system, system-ui, sans-serif" }}>
+      <div className="font-sans">
       {/* Mobile Navbar */}
       <div className="md:hidden fixed top-0 left-0 right-0 z-50 bg-[#011128] border-b border-white/10 px-6 py-4 flex items-center justify-between">
         <span className="text-lg font-semibold text-[#F5F5F5]">Chris Prempeh</span>
@@ -65,7 +53,7 @@ export default function Home() {
               <path fillRule="evenodd" clipRule="evenodd" d="M12 0C5.37 0 0 5.373 0 12a12 12 0 008.207 11.385c.6.11.82-.26.82-.577v-2.065c-3.338.727-4.043-1.61-4.043-1.61-.546-1.387-1.334-1.756-1.334-1.756-1.09-.745.083-.73.083-.73 1.205.084 1.84 1.238 1.84 1.238 1.072 1.835 2.812 1.305 3.498.998.108-.777.42-1.305.76-1.604-2.665-.305-5.466-1.334-5.466-5.933 0-1.31.468-2.381 1.235-3.22-.123-.305-.535-1.524.117-3.177 0 0 1.007-.322 3.3 1.23a11.49 11.49 0 016.003 0c2.292-1.552 3.297-1.23 3.297-1.23.653 1.653.24 2.872.118 3.177.77.839 1.234 1.91 1.234 3.22 0 4.61-2.803 5.625-5.476 5.921.432.37.814 1.103.814 2.222v3.293c0 .32.22.694.827.576A12.005 12.005 0 0024 12c0-6.627-5.373-12-12-12z"/>
             </svg>
           </a>
-          <a href="https:/https://www.linkedin.com/in/christopher-prempeh/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <a href="https://www.linkedin.com/in/christopher-prempeh/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
             <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 text-[#F5F5F5] hover:text-white" viewBox="0 0 24 24" fill="currentColor">
               <path d="M19 0h-14C2.24 0 0 2.24 0 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5V5c0-2.76-2.24-5-5-5zM7.19 19H4.28V8.99h2.91V19zm-1.45-11.6c-.93 0-1.69-.76-1.69-1.7s.76-1.7 1.69-1.7 1.69.76 1.69 1.7-.76 1.7-1.69 1.7zM20 19h-2.91v-4.89c0-1.17-.02-2.67-1.63-2.67-1.63 0-1.88 1.27-1.88 2.58V19h-2.91V8.99h2.79v1.37h.04c.39-.74 1.33-1.52 2.74-1.52 2.93 0 3.47 1.93 3.47 4.44V19z"/>
             </svg>
@@ -81,6 +69,22 @@ export default function Home() {
           </button>
         </div>
       </div>
+      {!menuOpen && (
+        <div className="md:hidden fixed top-16 left-0 right-0 z-40 px-6 py-3">
+          <a
+            href="https://fantasy-tool-4gbiq4tuq-chris-prempehs-projects.vercel.app"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-md border border-white/10 bg-white/5 px-4 py-2 text-[#F5F5F5] hover:bg-white/10 hover:text-white transition"
+          >
+            <span>Live demo: Fantasy Tool</span>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4">
+              <path d="M14 3h7v7h-2V6.414l-9.293 9.293-1.414-1.414L17.586 5H14V3z" />
+              <path d="M5 5h5V3H3v7h2V5zm0 14v-5H3v7h7v-2H5z" />
+            </svg>
+          </a>
+        </div>
+      )}
       {menuOpen && (
         <div className="md:hidden fixed top-16 left-0 right-0 bg-[#011128] z-40 border-t border-white/10 px-6 py-6 space-y-4 text-[#F5F5F5] text-base">
           <a
@@ -127,6 +131,19 @@ export default function Home() {
             <h1 className="text-6xl font-bold text-[#F5F5F5]">Chris Prempeh</h1>
             <h2 className="text-xl text-[#F5F5F5]/80 mt-2">Technical Manager</h2>
             <p className="text-[#F5F5F5]/60 mt-4 text-base mb-22">Future developer currently building backend systems that are reliable, clean, and built to scale.</p>
+            <a
+              href="https://fantasy-tool-4gbiq4tuq-chris-prempehs-projects.vercel.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Open Fantasy Tool live demo in a new tab"
+              className="mt-2 inline-flex items-center gap-2 rounded-md border border-white/10 bg-white/5 px-4 py-2 text-[#F5F5F5] hover:bg-white/10 hover:text-white transition"
+            >
+              <span>Live demo: Fantasy Tool</span>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4">
+                <path d="M14 3h7v7h-2V6.414l-9.293 9.293-1.414-1.414L17.586 5H14V3z" />
+                <path d="M5 5h5V3H3v7h2V5zm0 14v-5H3v7h7v-2H5z" />
+              </svg>
+            </a>
             <div className="space-y-6 text-base text-[#F5F5F5]/60 font-medium">
               {[
                 { id: 'about', label: 'about' },
@@ -173,13 +190,13 @@ export default function Home() {
         <div className="space-y-32">
           <section id="about" className="scroll-mt-16 space-y-4 text-base sm:text-lg text-[#F5F5F5]/80">
             <p>
-              I’m a developer who enjoys building secure, scalable systems that don’t break under pressure. Right now, I’m pursuing my CS degree while steadily building a portfolio of backend projects. I’m focused on writing clean code, learning by doing, and leveling up one system at a time.
+              A developer who building secure, scalable systems that don’t break under pressure. At the moment I’m at the tail end of my BS in CompSci while steadily building a portfolio of different projects.
             </p>
             <p>
-              I worked in environments where precision and reliability mattered: from keeping pro soccer matches running smoothly as a VAR tech, to managing high-volume logistics at Amazon. Those roles sharpened how I think about systems, pressure, and user expectations — and that mindset carries into my code.
+              Currently working in an environment where precision and reliability mattered trying to keep referees happy and pro soccer matches running smoothly as a VAR Tech Manager. It's definitely sharpened how I think about systems, pressure, and user expectations and that mindset carries into my code.
             </p>
             <p>
-              Outside of tech I’m a huge soccer head, and someone who appreciates a well-thrown combo (both in boxing and debugging). I’m currently looking for backend developer opportunities where I can learn fast, contribute meaningfully, and grow into the engineer I’m building toward.
+              Outside of work I'm a sports fanatic; Open to any sports debate as long as we can agree that Lebron and Messi are the GOATs. Feel free to connect or shoot me a message on my LinkedIn in regards to any questions, comments, or concerns.
             </p>
           </section>
 
@@ -205,6 +222,47 @@ export default function Home() {
               >
                 <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 transition-all duration-300 hover:scale-110 hover:text-white" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M12 0C5.373 0 0 5.373 0 12a12.013 12.013 0 008.208 11.385c.6.111.82-.26.82-.577v-2.065c-3.338.726-4.043-1.61-4.043-1.61-.546-1.387-1.334-1.756-1.334-1.756-1.091-.745.083-.73.083-.73 1.205.084 1.84 1.238 1.84 1.238 1.072 1.835 2.812 1.305 3.498.998.108-.777.419-1.305.76-1.604-2.665-.304-5.466-1.333-5.466-5.933 0-1.31.469-2.381 1.235-3.22-.123-.304-.535-1.523.117-3.176 0 0 1.007-.322 3.3 1.23a11.487 11.487 0 016.003 0c2.292-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.872.12 3.176.769.839 1.233 1.91 1.233 3.22 0 4.61-2.803 5.625-5.475 5.921.43.37.813 1.103.813 2.222v3.293c0 .32.218.694.825.576A12.015 12.015 0 0024 12c0-6.627-5.373-12-12-12z"/>
+                </svg>
+              </a>
+            </motion.div>
+
+            {/* Fantasy Football Tool Card */}
+            <motion.div
+              className="rounded-lg px-8 py-6 border border-white/10 bg-white/5 backdrop-blur-md mt-6"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, ease: 'easeOut' }}
+              viewport={{ once: true }}
+            >
+              <h3 className="text-2xl font-bold text-[#F5F5F5]">Fantasy Football Tool</h3>
+              <p className="text-[#F5F5F5]/80 mt-2 text-base">
+                A full-stack fantasy football app with sortable draftboard, tiers (T1–T4), favorites by year, and live stat columns (fantasy, rushing, receiving, passing). FastAPI backend + Next.js/TypeScript frontend with Tailwind CSS.
+              </p>
+
+              {/* GitHub link */}
+              <a
+                href="https://github.com/ckwame-jpg/fantasy-tool"
+                className="inline-block mt-4 text-[#F5F5F5] hover:text-white transition-transform hover:scale-110"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub Project Repository"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 transition-all duration-300 hover:scale-110 hover:text-white" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 0C5.373 0 0 5.373 0 12a12.013 12.013 0 008.208 11.385c.6.111.82-.26.82-.577v-2.065c-3.338.726-4.043-1.61-4.043-1.61-.546-1.387-1.334-1.756-1.334-1.756-1.091-.745.083-.73.083-.73 1.205.084 1.84 1.238 1.84 1.238 1.072 1.835 2.812 1.305 3.498.998.108-.777.419-1.305.76-1.604-2.665-.304-5.466-1.333-5.466-5.933 0-1.31.469-2.381 1.235-3.22-.123-.304-.535-1.523.117-3.176 0 0 1.007-.322 3.3 1.23a11.487 11.487 0 016.003 0c2.292-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.872.12 3.176.769.839 1.233 1.91 1.233 3.22 0 4.61-2.803 5.625-5.475 5.921.43.37.813 1.103.813 2.222v3.293c0 .32.218.694.825.576A12.015 12.015 0 0024 12c0-6.627-5.373-12-12-12z"/>
+                </svg>
+              </a>
+
+              {/* Optional live demo link */}
+              <a
+                href="https://fantasy-tool-4gbiq4tuq-chris-prempehs-projects.vercel.app"
+                className="inline-block ml-3 text-[#F5F5F5] hover:text-white transition-transform hover:scale-110"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Live Demo"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
+                  <path d="M14 3h7v7h-2V6.414l-9.293 9.293-1.414-1.414L17.586 5H14V3z" />
+                  <path d="M5 5h5V3H3v7h2V5zm0 14v-5H3v7h7v-2H5z" />
                 </svg>
               </a>
             </motion.div>
