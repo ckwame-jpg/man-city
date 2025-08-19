@@ -6,7 +6,8 @@ export default function Home() {
   const experienceRef = useRef<HTMLElement>(null);
   const [activeSection, setActiveSection] = useState('about');
   const [menuOpen, setMenuOpen] = useState(false);
-
+  const fantasyDemoUrl = process.env.NEXT_PUBLIC_FANTASY_DEMO_URL;
+  
   useEffect(() => {
     const main = mainRef.current;
     if (!main) return;
@@ -209,6 +210,19 @@ export default function Home() {
               <p className="text-[#F5F5F5]/80 mt-2 text-base">
                 A full-stack fantasy football app with sortable draftboard, tiers (T1–T4), favorites by year, and live stat columns (fantasy, rushing, receiving, passing). FastAPI backend + Next.js/TypeScript frontend with Tailwind CSS.
               </p>
+
+              {/* Live Demo link (shown only if env var is set) */}
+              {fantasyDemoUrl && (
+                <a
+                  href={fantasyDemoUrl}
+                  className="inline-block mt-4 mr-4 px-4 py-2 rounded-md border border-white/20 text-[#F5F5F5] hover:text-white hover:border-white/40 transition"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Live Demo"
+                >
+                  live demo
+                </a>
+              )}
 
               {/* GitHub link */}
               <a

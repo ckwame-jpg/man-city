@@ -6,6 +6,7 @@ Create a `.env.local` (you can copy from `.env.example`):
 
 ```
 NEXT_PUBLIC_SITE_URL=http://localhost:3000
+NEXT_PUBLIC_FANTASY_DEMO_URL=https://your-demo-url.example
 ```
 
 On Vercel, set `NEXT_PUBLIC_SITE_URL` to your production domain, e.g. `https://chrisprem.xyz`.
@@ -45,3 +46,4 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 
 Environment variables on Vercel:
 - `NEXT_PUBLIC_SITE_URL` = your production domain (e.g., `https://chrisprem.xyz`)
+- `NEXT_PUBLIC_FANTASY_DEMO_URL` = live demo URL for the fantasy app (optional)
