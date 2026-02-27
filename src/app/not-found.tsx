@@ -1,6 +1,3 @@
-// src/app/not-found.tsx
-// src/app/not-found.tsx
-// src/app/not-found.tsx
 "use client";
 import { motion } from 'framer-motion';
 import Link from 'next/link';
