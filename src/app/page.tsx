@@ -180,10 +180,10 @@ export default function Home() {
           {/* About */}
           <section id="about" className="scroll-mt-16 space-y-4 text-base sm:text-lg text-[#F5F5F5]/80">
             <p>
-              I build backend systems with <span className="text-[#F5F5F5]">Python</span>, <span className="text-[#F5F5F5]">FastAPI</span>, <span className="text-[#F5F5F5]">Docker</span>, and <span className="text-[#F5F5F5]">PostgreSQL</span> — focused on clean architecture, secure authentication, and infrastructure that holds up in production.
+              I build backend systems with <span className="text-[#F5F5F5]">Python</span>, <span className="text-[#F5F5F5]">FastAPI</span>, <span className="text-[#F5F5F5]">Docker</span>, and <span className="text-[#F5F5F5]">PostgreSQL</span>, focused on clean architecture, secure authentication, and infrastructure that holds up in production.
             </p>
             <p>
-              I&apos;m currently finishing my <span className="text-[#F5F5F5]">BS in Computer Science</span> while building full-stack projects that go beyond coursework. My work as a VAR Technical Manager — maintaining 100% uptime on live broadcast systems under real-time pressure — gave me a sharp instinct for reliability, monitoring, and operating systems where failure isn&apos;t an option.
+              I&apos;m currently finishing my <span className="text-[#F5F5F5]">BS in Computer Science</span> while building full-stack projects that go beyond coursework. My work as a VAR Technical Manager, maintaining 100% uptime on live broadcast systems under real-time pressure, gave me a sharp instinct for reliability, monitoring, and operating systems where failure isn&apos;t an option.
             </p>
             <p>
               I&apos;m actively looking for <span className="text-[#F5F5F5]">backend or full-stack engineering roles</span> where I can contribute to production systems and grow as an engineer.{' '}
@@ -242,7 +242,7 @@ export default function Home() {
             >
               <h3 className="text-2xl font-bold text-[#F5F5F5]">habit tracker</h3>
               <p className="text-[#F5F5F5]/80 mt-2 text-base">
-                A production-ready REST API built with FastAPI and clean architecture — Pydantic schemas, SQLAlchemy models, and a service-layer pattern. Features JWT authentication, Dockerized deployment, and a streak-tracking system that records and maintains user habits over time.
+                A production-ready REST API built with FastAPI and clean architecture, including Pydantic schemas, SQLAlchemy models, and a service-layer pattern. Features JWT authentication, Dockerized deployment, and a streak-tracking system that records and maintains user habits over time.
               </p>
               <div className="flex flex-wrap gap-2 mt-4">
                 {['FastAPI', 'Python', 'JWT Auth', 'Docker', 'SQLAlchemy', 'Pydantic', 'PostgreSQL'].map((tag) => (
