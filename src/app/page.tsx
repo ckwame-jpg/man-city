@@ -204,7 +204,6 @@ export default function Home() {
                 Let&apos;s connect on LinkedIn
               </a>.
             </p>
-            <GitHubHeatmap />
           </section>
 
           {/* Skills */}
@@ -355,6 +354,7 @@ export default function Home() {
               </div>
             </div>
           </section>
+          <GitHubHeatmap />
           <div className="text-base text-[var(--text-faint)] mt-12 mb-35 md:pl-4">
             <p>
               designed and built in VS Code. built with Next.js and Tailwind CSS, version controlled with GitHub, and deployed via Vercel. coded in TypeScript.
