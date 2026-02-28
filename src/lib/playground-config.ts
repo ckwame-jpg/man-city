@@ -131,7 +131,7 @@ export const apiConfigs: APIConfig[] = [
   {
     name: 'taskboard-api',
     slug: 'taskboard',
-    baseUrl: '',
+    baseUrl: process.env.NEXT_PUBLIC_TASKBOARD_API_URL || '',
     demoCredentials: { email: 'demo@taskboard.dev', password: 'demo1234' },
     loginPath: '/login',
     endpoints: [
@@ -162,10 +162,10 @@ export const apiConfigs: APIConfig[] = [
         path: '/boards/',
         description: 'Create a board',
         requiresAuth: true,
-        requestBody: { title: 'Sprint Planning' },
+        requestBody: { title: 'Weekend Plans' },
         mockResponse: {
           status: 200,
-          body: { id: 1, title: 'Sprint Planning', owner_id: 1, created_at: '2026-02-28T12:00:00' },
+          body: { id: 1, title: 'Weekend Plans', owner_id: 1, created_at: '2026-02-28T12:00:00' },
         },
       },
       {
@@ -176,8 +176,8 @@ export const apiConfigs: APIConfig[] = [
         mockResponse: {
           status: 200,
           body: [
-            { id: 1, title: 'Sprint Planning', owner_id: 1, created_at: '2026-02-28T12:00:00' },
-            { id: 2, title: 'Bug Tracker', owner_id: 1, created_at: '2026-02-27T09:30:00' },
+            { id: 1, title: 'Weekend Plans', owner_id: 1, created_at: '2026-02-28T12:00:00' },
+            { id: 2, title: 'Grocery List', owner_id: 1, created_at: '2026-02-27T09:30:00' },
           ],
         },
       },
@@ -190,21 +190,23 @@ export const apiConfigs: APIConfig[] = [
           status: 200,
           body: {
             id: 1,
-            title: 'Sprint Planning',
+            title: 'Weekend Plans',
             owner_id: 1,
             columns: [
               { id: 1, title: 'To Do', position: 0, cards: [
-                { id: 1, title: 'Set up CI/CD pipeline', description: 'Configure GitHub Actions', position: 0, column_id: 1, created_by: 1 },
-                { id: 2, title: 'Write API docs', description: null, position: 1, column_id: 1, created_by: 1 },
+                { id: 1, title: 'Make coffee', description: 'The good beans, not the instant stuff', position: 0, column_id: 1, created_by: 1 },
+                { id: 2, title: 'Go for a run', description: 'At least 3km, no excuses', position: 1, column_id: 1, created_by: 1 },
+                { id: 3, title: 'Call mom', description: null, position: 2, column_id: 1, created_by: 1 },
               ]},
               { id: 2, title: 'In Progress', position: 1, cards: [
-                { id: 3, title: 'Implement WebSocket sync', description: 'Real-time board updates', position: 0, column_id: 2, created_by: 1 },
+                { id: 4, title: 'Grocery shopping', description: 'Milk, eggs, and way too many snacks', position: 0, column_id: 2, created_by: 1 },
               ]},
-              { id: 3, title: 'Done', position: 2, cards: [] },
+              { id: 3, title: 'Done', position: 2, cards: [
+                { id: 5, title: 'Clean the apartment', description: null, position: 0, column_id: 3, created_by: 1 },
+              ]},
             ],
             members: [
-              { user_id: 1, role: 'owner', display_name: 'Chris' },
-              { user_id: 2, role: 'editor', display_name: 'Alex' },
+              { user_id: 1, role: 'owner', display_name: 'Demo User' },
             ],
           },
         },
@@ -214,10 +216,10 @@ export const apiConfigs: APIConfig[] = [
         path: '/boards/1/columns/',
         description: 'Add a column',
         requiresAuth: true,
-        requestBody: { title: 'Review' },
+        requestBody: { title: 'Maybe Later' },
         mockResponse: {
           status: 200,
-          body: { id: 4, title: 'Review', position: 3 },
+          body: { id: 4, title: 'Maybe Later', position: 3 },
         },
       },
       {
@@ -225,10 +227,10 @@ export const apiConfigs: APIConfig[] = [
         path: '/boards/1/cards/',
         description: 'Create a card',
         requiresAuth: true,
-        requestBody: { column_id: 1, title: 'Add dark mode', description: 'Support light and dark themes' },
+        requestBody: { column_id: 1, title: 'Take a nap', description: 'A short one, 20 min max' },
         mockResponse: {
           status: 200,
-          body: { id: 4, title: 'Add dark mode', description: 'Support light and dark themes', position: 2, column_id: 1, created_by: 1 },
+          body: { id: 6, title: 'Take a nap', description: 'A short one, 20 min max', position: 3, column_id: 1, created_by: 1 },
         },
       },
       {
@@ -236,10 +238,10 @@ export const apiConfigs: APIConfig[] = [
         path: '/boards/1/cards/3/move',
         description: 'Move card to another column',
         requiresAuth: true,
-        requestBody: { column_id: 3, position: 0 },
+        requestBody: { column_id: 3, position: 1 },
         mockResponse: {
           status: 200,
-          body: { id: 3, title: 'Implement WebSocket sync', description: 'Real-time board updates', position: 0, column_id: 3, created_by: 1 },
+          body: { id: 4, title: 'Grocery shopping', description: 'Milk, eggs, and way too many snacks', position: 1, column_id: 3, created_by: 1 },
         },
       },
       {
@@ -247,10 +249,10 @@ export const apiConfigs: APIConfig[] = [
         path: '/boards/1/invite',
         description: 'Invite a member',
         requiresAuth: true,
-        requestBody: { email: 'alex@example.com', role: 'editor' },
+        requestBody: { email: 'roommate@example.com', role: 'editor' },
         mockResponse: {
           status: 200,
-          body: { user_id: 2, role: 'editor', display_name: 'Alex' },
+          body: { user_id: 2, role: 'editor', display_name: 'Roommate' },
         },
       },
     ],

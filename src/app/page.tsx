@@ -250,7 +250,7 @@ export default function Home() {
             >
               <h3 className="text-2xl font-bold text-[var(--text-primary)]">habitual habits</h3>
               <p className="text-[var(--text-secondary)] mt-2 text-base">
-                A production-ready REST API built with FastAPI and clean architecture, including Pydantic schemas and SQLAlchemy models. Features JWT authentication, full CRUD operations, completion logging, Dockerized deployment, a streak-tracking system, and a pytest test suite covering auth flows, CRUD operations, and streak logic.
+                A habit tracking API I built to get better at backend development. You can create habits, log completions, and track streaks — all behind JWT auth. I wrote a full pytest suite for it too, covering auth flows, CRUD, and the streak logic. Dockerized and ready to deploy.
               </p>
               <div className="flex flex-wrap gap-2 mt-4">
                 {['FastAPI', 'Python', 'JWT Auth', 'Docker', 'SQLAlchemy', 'Pydantic', 'SQLite', 'pytest'].map((tag) => (
@@ -282,7 +282,7 @@ export default function Home() {
             >
               <h3 className="text-2xl font-bold text-[var(--text-primary)]">fantasy football app</h3>
               <p className="text-[var(--text-secondary)] mt-2 text-base">
-                A full-stack draft tool with a sortable draftboard, tier rankings (T1–T4), favorites by year, and live stat columns for fantasy, rushing, receiving, and passing. The FastAPI backend serves player data while the Next.js frontend handles real-time filtering and sorting with no page reloads.
+                Built this because I needed a better way to prep for my fantasy draft. It&apos;s got a sortable draftboard, tier rankings, favorites by year, and stat columns for rushing, receiving, and passing. FastAPI serves the player data and the Next.js frontend handles all the filtering and sorting live — no page reloads.
               </p>
               <div className="flex flex-wrap gap-2 mt-4">
                 {['FastAPI', 'Next.js', 'TypeScript', 'Tailwind CSS', 'React', 'Python'].map((tag) => (
@@ -331,7 +331,7 @@ export default function Home() {
             >
               <h3 className="text-2xl font-bold text-[var(--text-primary)]">taskboard</h3>
               <p className="text-[var(--text-secondary)] mt-2 text-base">
-                A real-time collaborative task board with drag-and-drop cards, WebSocket-powered live sync across users, and role-based access control. The FastAPI backend uses PostgreSQL with SQLAlchemy, JWT authentication, and broadcasts mutations via WebSockets. The Next.js frontend uses dnd-kit for drag-and-drop interactions.
+                A collaborative task board where multiple people can work on the same board in real time. Drag cards between columns and everyone sees it instantly via WebSockets. Has role-based permissions (owner, editor, viewer) so you can invite people with the right level of access. PostgreSQL backend, Next.js frontend, all running in Docker.
               </p>
               <div className="flex flex-wrap gap-2 mt-4">
                 {['FastAPI', 'Next.js', 'PostgreSQL', 'WebSockets', 'TypeScript', 'Docker'].map((tag) => (
