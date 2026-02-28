@@ -248,12 +248,12 @@ export default function Home() {
               transition={{ duration: 0.6, ease: 'easeOut' }}
               viewport={{ once: true }}
             >
-              <h3 className="text-2xl font-bold text-[var(--text-primary)]">habit tracker</h3>
+              <h3 className="text-2xl font-bold text-[var(--text-primary)]">habitual habits</h3>
               <p className="text-[var(--text-secondary)] mt-2 text-base">
-                A production-ready REST API built with FastAPI and clean architecture, including Pydantic schemas, SQLAlchemy models, and a service-layer pattern. Features JWT authentication, Dockerized deployment, and a streak-tracking system that records and maintains user habits over time.
+                A production-ready REST API built with FastAPI and clean architecture, including Pydantic schemas and SQLAlchemy models. Features JWT authentication, full CRUD operations, completion logging, Dockerized deployment, and a streak-tracking system that calculates consecutive days of habit completion.
               </p>
               <div className="flex flex-wrap gap-2 mt-4">
-                {['FastAPI', 'Python', 'JWT Auth', 'Docker', 'SQLAlchemy', 'Pydantic', 'PostgreSQL'].map((tag) => (
+                {['FastAPI', 'Python', 'JWT Auth', 'Docker', 'SQLAlchemy', 'Pydantic', 'SQLite'].map((tag) => (
                   <span key={tag} className="px-3 py-1 text-xs rounded-full border border-[var(--border-tag)] bg-[var(--card-bg)] text-[var(--tag-text)]">
                     {tag}
                   </span>

@@ -2,6 +2,13 @@
 import { useState } from 'react';
 import { endpoints } from '@/lib/playground-config';
 
+const methodColors: Record<string, string> = {
+  GET: 'text-green-400',
+  POST: 'text-blue-400',
+  PUT: 'text-yellow-400',
+  DELETE: 'text-red-400',
+};
+
 export default function APIPlayground() {
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [response, setResponse] = useState<string | null>(null);
@@ -32,13 +39,13 @@ export default function APIPlayground() {
         <div className="w-3 h-3 rounded-full bg-red-500/60" />
         <div className="w-3 h-3 rounded-full bg-yellow-500/60" />
         <div className="w-3 h-3 rounded-full bg-green-500/60" />
-        <span className="ml-2 text-xs text-[var(--text-muted)] font-mono">habit-tracker-api</span>
+        <span className="ml-2 text-xs text-[var(--text-muted)] font-mono">habitual-habits-api</span>
         <span className="ml-auto text-xs text-[var(--text-faint)] font-mono">mock mode</span>
       </div>
 
       {/* Controls */}
       <div className="flex flex-wrap items-center gap-3 px-4 py-3 border-b border-[var(--border-subtle)]">
-        <span className="text-xs font-mono font-bold text-green-400">{selected.method}</span>
+        <span className={`text-xs font-mono font-bold ${methodColors[selected.method] ?? 'text-green-400'}`}>{selected.method}</span>
         <select
           value={selectedIndex}
           onChange={(e) => {
@@ -64,6 +71,16 @@ export default function APIPlayground() {
           {loading ? 'Running...' : 'Run'}
         </button>
       </div>
+
+      {/* Request Body */}
+      {selected.requestBody != null && (
+        <div className="px-4 py-3 border-b border-[var(--border-subtle)]">
+          <p className="text-xs text-[var(--text-muted)] font-mono mb-1">Request Body</p>
+          <pre className="text-sm font-mono text-[var(--text-secondary)] whitespace-pre-wrap break-words">
+            {JSON.stringify(selected.requestBody, null, 2)}
+          </pre>
+        </div>
+      )}
 
       {/* Response */}
       <div className="px-4 py-3 font-mono text-sm min-h-[120px] max-h-[300px] overflow-auto">
