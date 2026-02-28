@@ -1,6 +1,6 @@
 'use client';
 import { useState, useRef } from 'react';
-import { endpoints, API_BASE_URL, DEMO_CREDENTIALS } from '@/lib/playground-config';
+import { apiConfigs } from '@/lib/playground-config';
 
 const methodColors: Record<string, string> = {
   GET: 'text-green-400',
@@ -10,23 +10,34 @@ const methodColors: Record<string, string> = {
 };
 
 export default function APIPlayground() {
+  const [selectedApi, setSelectedApi] = useState(0);
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [response, setResponse] = useState<string | null>(null);
   const [statusCode, setStatusCode] = useState<number | null>(null);
   const [responseTime, setResponseTime] = useState<number | null>(null);
   const [loading, setLoading] = useState(false);
-  const [mode, setMode] = useState<'live' | 'mock'>(API_BASE_URL ? 'live' : 'mock');
   const tokenRef = useRef<string | null>(null);
 
-  const selected = endpoints[selectedIndex];
+  const api = apiConfigs[selectedApi];
+  const mode = api.baseUrl ? 'live' : 'mock';
+  const selected = api.endpoints[selectedIndex];
+
+  const switchApi = (index: number) => {
+    setSelectedApi(index);
+    setSelectedIndex(0);
+    setResponse(null);
+    setStatusCode(null);
+    setResponseTime(null);
+    tokenRef.current = null;
+  };
 
   const authenticate = async (): Promise<string | null> => {
     try {
       const formData = new URLSearchParams();
-      formData.append('username', DEMO_CREDENTIALS.email);
-      formData.append('password', DEMO_CREDENTIALS.password);
+      formData.append('username', api.demoCredentials.email);
+      formData.append('password', api.demoCredentials.password);
 
-      const res = await fetch(`${API_BASE_URL}/login`, {
+      const res = await fetch(`${api.baseUrl}${api.loginPath}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: formData,
@@ -51,12 +62,10 @@ export default function APIPlayground() {
   };
 
   const handleLiveRun = async () => {
-    // Auto-authenticate if needed
     let token = tokenRef.current;
     if (!token && selected.requiresAuth) {
       token = await authenticate();
       if (!token) {
-        setMode('mock');
         handleMockRun();
         return;
       }
@@ -71,7 +80,7 @@ export default function APIPlayground() {
       }
 
       let body: string | undefined;
-      if (selected.path === '/login' && selected.requestBody) {
+      if (selected.path === api.loginPath && selected.requestBody) {
         headers['Content-Type'] = 'application/x-www-form-urlencoded';
         const formData = new URLSearchParams();
         const reqBody = selected.requestBody as Record<string, string>;
@@ -82,7 +91,7 @@ export default function APIPlayground() {
         body = JSON.stringify(selected.requestBody);
       }
 
-      const res = await fetch(`${API_BASE_URL}${selected.path}`, {
+      const res = await fetch(`${api.baseUrl}${selected.path}`, {
         method: selected.method,
         headers,
         body,
@@ -90,8 +99,7 @@ export default function APIPlayground() {
 
       const data = await res.json();
 
-      // If login, store the token
-      if (selected.path === '/login' && res.ok && data.access_token) {
+      if (selected.path === api.loginPath && res.ok && data.access_token) {
         tokenRef.current = data.access_token;
       }
 
@@ -100,8 +108,6 @@ export default function APIPlayground() {
       setResponseTime(Math.round(performance.now() - start));
       setLoading(false);
     } catch {
-      // Network error — fall back to mock
-      setMode('mock');
       handleMockRun();
     }
   };
@@ -110,7 +116,7 @@ export default function APIPlayground() {
     setLoading(true);
     setResponse(null);
 
-    if (mode === 'mock' || !API_BASE_URL) {
+    if (mode === 'mock' || !api.baseUrl) {
       handleMockRun();
     } else {
       handleLiveRun();
@@ -124,7 +130,22 @@ export default function APIPlayground() {
         <div className="w-3 h-3 rounded-full bg-red-500/60" />
         <div className="w-3 h-3 rounded-full bg-yellow-500/60" />
         <div className="w-3 h-3 rounded-full bg-green-500/60" />
-        <span className="ml-2 text-xs text-[var(--text-muted)] font-mono">habitual-habits-api</span>
+        <div className="ml-2 flex items-center gap-1">
+          {apiConfigs.map((cfg, i) => (
+            <button
+              key={cfg.slug}
+              type="button"
+              onClick={() => switchApi(i)}
+              className={`px-2 py-0.5 text-xs font-mono rounded transition ${
+                i === selectedApi
+                  ? 'bg-[var(--border-subtle)] text-[var(--text-primary)]'
+                  : 'text-[var(--text-muted)] hover:text-[var(--text-secondary)]'
+              }`}
+            >
+              {cfg.name}
+            </button>
+          ))}
+        </div>
         <span className="ml-auto flex items-center gap-1.5 text-xs font-mono">
           <span className={`w-1.5 h-1.5 rounded-full ${mode === 'live' ? 'bg-green-400' : 'bg-yellow-400'}`} />
           <span className="text-[var(--text-faint)]">{mode === 'live' ? 'live' : 'mock'}</span>
@@ -135,6 +156,7 @@ export default function APIPlayground() {
       <div className="flex flex-wrap items-center gap-3 px-4 py-3 border-b border-[var(--border-subtle)]">
         <span className={`text-xs font-mono font-bold ${methodColors[selected.method] ?? 'text-green-400'}`}>{selected.method}</span>
         <select
+          aria-label="Select endpoint"
           value={selectedIndex}
           onChange={(e) => {
             setSelectedIndex(Number(e.target.value));
@@ -144,7 +166,7 @@ export default function APIPlayground() {
           }}
           className="flex-1 min-w-0 bg-transparent text-[var(--text-primary)] text-sm font-mono border border-[var(--border-subtle)] rounded px-2 py-1 outline-none focus:border-[var(--border-hover)] transition"
         >
-          {endpoints.map((ep, i) => (
+          {api.endpoints.map((ep, i) => (
             <option key={i} value={i} className="bg-[var(--bg-primary)]">
               {ep.path} — {ep.description}
             </option>

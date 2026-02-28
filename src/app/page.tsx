@@ -358,7 +358,7 @@ export default function Home() {
           <section id="playground" className="scroll-mt-16 border-t border-[var(--border-subtle)] pt-10">
             <h2 className="text-2xl font-semibold text-[var(--text-primary)] mb-5">playground</h2>
             <p className="text-[var(--text-secondary)] text-base mb-4">
-              Try out the Habitual Habits API. Select an endpoint and hit Run to see real responses from the live server.
+              Try out the APIs behind my projects. Switch between Habitual Habits and TaskBoard, pick an endpoint, and hit Run.
             </p>
             <APIPlayground />
           </section>
