@@ -1,9 +1,17 @@
+export const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || '';
+
+export const DEMO_CREDENTIALS = {
+  email: 'demo@habitual.dev',
+  password: 'demo1234',
+};
+
 export interface Endpoint {
   method: string;
   path: string;
   description: string;
+  requiresAuth: boolean;
   requestBody?: unknown;
-  response: {
+  mockResponse: {
     status: number;
     body: unknown;
   };
@@ -14,8 +22,9 @@ export const endpoints: Endpoint[] = [
     method: 'POST',
     path: '/register',
     description: 'Register a new user',
+    requiresAuth: false,
     requestBody: { email: 'user@example.com', password: 'securepassword123' },
-    response: {
+    mockResponse: {
       status: 200,
       body: { id: 1, email: 'user@example.com' },
     },
@@ -24,8 +33,9 @@ export const endpoints: Endpoint[] = [
     method: 'POST',
     path: '/login',
     description: 'Login and get access token',
-    requestBody: { username: 'user@example.com', password: 'securepassword123' },
-    response: {
+    requiresAuth: false,
+    requestBody: { username: 'demo@habitual.dev', password: 'demo1234' },
+    mockResponse: {
       status: 200,
       body: { access_token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...', token_type: 'bearer' },
     },
@@ -34,8 +44,9 @@ export const endpoints: Endpoint[] = [
     method: 'POST',
     path: '/habits/',
     description: 'Create a new habit',
+    requiresAuth: true,
     requestBody: { title: 'Morning workout', description: 'Exercise for 30 minutes', frequency: 'daily' },
-    response: {
+    mockResponse: {
       status: 200,
       body: { id: 1, title: 'Morning workout', description: 'Exercise for 30 minutes', frequency: 'daily', user_id: 1 },
     },
@@ -44,7 +55,8 @@ export const endpoints: Endpoint[] = [
     method: 'GET',
     path: '/habits/',
     description: 'List all habits',
-    response: {
+    requiresAuth: true,
+    mockResponse: {
       status: 200,
       body: [
         { id: 1, title: 'Morning workout', description: 'Exercise for 30 minutes', frequency: 'daily', user_id: 1 },
@@ -57,7 +69,8 @@ export const endpoints: Endpoint[] = [
     method: 'GET',
     path: '/habits/1',
     description: 'Get habit by ID',
-    response: {
+    requiresAuth: true,
+    mockResponse: {
       status: 200,
       body: { id: 1, title: 'Morning workout', description: 'Exercise for 30 minutes', frequency: 'daily', user_id: 1 },
     },
@@ -66,8 +79,9 @@ export const endpoints: Endpoint[] = [
     method: 'PUT',
     path: '/habits/1',
     description: 'Update a habit',
+    requiresAuth: true,
     requestBody: { title: 'Morning run', description: 'Run for 30 minutes', frequency: 'daily' },
-    response: {
+    mockResponse: {
       status: 200,
       body: { id: 1, title: 'Morning run', description: 'Run for 30 minutes', frequency: 'daily', user_id: 1 },
     },
@@ -76,7 +90,8 @@ export const endpoints: Endpoint[] = [
     method: 'DELETE',
     path: '/habits/1',
     description: 'Delete a habit',
-    response: {
+    requiresAuth: true,
+    mockResponse: {
       status: 200,
       body: { detail: 'Habit deleted' },
     },
@@ -85,8 +100,9 @@ export const endpoints: Endpoint[] = [
     method: 'POST',
     path: '/habits/1/complete',
     description: 'Log a completion',
+    requiresAuth: true,
     requestBody: { date_completed: '2026-02-28' },
-    response: {
+    mockResponse: {
       status: 200,
       body: { id: 1, habit_id: 1, date_completed: '2026-02-28' },
     },
@@ -95,7 +111,8 @@ export const endpoints: Endpoint[] = [
     method: 'GET',
     path: '/habits/1/streak',
     description: 'Get current streak',
-    response: {
+    requiresAuth: true,
+    mockResponse: {
       status: 200,
       body: { streak: 12 },
     },

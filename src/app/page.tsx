@@ -250,10 +250,10 @@ export default function Home() {
             >
               <h3 className="text-2xl font-bold text-[var(--text-primary)]">habitual habits</h3>
               <p className="text-[var(--text-secondary)] mt-2 text-base">
-                A production-ready REST API built with FastAPI and clean architecture, including Pydantic schemas and SQLAlchemy models. Features JWT authentication, full CRUD operations, completion logging, Dockerized deployment, and a streak-tracking system that calculates consecutive days of habit completion.
+                A production-ready REST API built with FastAPI and clean architecture, including Pydantic schemas and SQLAlchemy models. Features JWT authentication, full CRUD operations, completion logging, Dockerized deployment, a streak-tracking system, and a pytest test suite covering auth flows, CRUD operations, and streak logic.
               </p>
               <div className="flex flex-wrap gap-2 mt-4">
-                {['FastAPI', 'Python', 'JWT Auth', 'Docker', 'SQLAlchemy', 'Pydantic', 'SQLite'].map((tag) => (
+                {['FastAPI', 'Python', 'JWT Auth', 'Docker', 'SQLAlchemy', 'Pydantic', 'SQLite', 'pytest'].map((tag) => (
                   <span key={tag} className="px-3 py-1 text-xs rounded-full border border-[var(--border-tag)] bg-[var(--card-bg)] text-[var(--tag-text)]">
                     {tag}
                   </span>
@@ -320,13 +320,45 @@ export default function Home() {
                 </a>
               </div>
             </motion.div>
+
+            {/* TaskBoard Card */}
+            <motion.div
+              className="rounded-lg px-8 py-6 border border-[var(--border-subtle)] bg-[var(--card-bg)] backdrop-blur-md mt-6"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, ease: 'easeOut' }}
+              viewport={{ once: true }}
+            >
+              <h3 className="text-2xl font-bold text-[var(--text-primary)]">taskboard</h3>
+              <p className="text-[var(--text-secondary)] mt-2 text-base">
+                A real-time collaborative task board with drag-and-drop cards, WebSocket-powered live sync across users, and role-based access control. The FastAPI backend uses PostgreSQL with SQLAlchemy, JWT authentication, and broadcasts mutations via WebSockets. The Next.js frontend uses dnd-kit for drag-and-drop interactions.
+              </p>
+              <div className="flex flex-wrap gap-2 mt-4">
+                {['FastAPI', 'Next.js', 'PostgreSQL', 'WebSockets', 'TypeScript', 'Docker'].map((tag) => (
+                  <span key={tag} className="px-3 py-1 text-xs rounded-full border border-[var(--border-tag)] bg-[var(--card-bg)] text-[var(--tag-text)]">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+              <a
+                href="https://github.com/ckwame-jpg/taskboard"
+                className="inline-block mt-4 text-[var(--text-primary)] hover:opacity-80 transition-transform hover:scale-110"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub Project Repository"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 transition-all duration-300 hover:scale-110" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 0C5.373 0 0 5.373 0 12a12.013 12.013 0 008.208 11.385c.6.111.82-.26.82-.577v-2.065c-3.338.726-4.043-1.61-4.043-1.61-.546-1.387-1.334-1.756-1.334-1.756-1.091-.745.083-.73.083-.73 1.205.084 1.84 1.238 1.84 1.238 1.072 1.835 2.812 1.305 3.498.998.108-.777.419-1.305.76-1.604-2.665-.304-5.466-1.333-5.466-5.933 0-1.31.469-2.381 1.235-3.22-.123-.304-.535-1.523.117-3.176 0 0 1.007-.322 3.3 1.23a11.487 11.487 0 016.003 0c2.292-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.872.12 3.176.769.839 1.233 1.91 1.233 3.22 0 4.61-2.803 5.625-5.475 5.921.43.37.813 1.103.813 2.222v3.293c0 .32.218.694.825.576A12.015 12.015 0 0024 12c0-6.627-5.373-12-12-12z"/>
+                </svg>
+              </a>
+            </motion.div>
           </section>
 
           {/* API Playground */}
           <section id="playground" className="scroll-mt-16 border-t border-[var(--border-subtle)] pt-10">
             <h2 className="text-2xl font-semibold text-[var(--text-primary)] mb-5">playground</h2>
             <p className="text-[var(--text-secondary)] text-base mb-4">
-              Try out the Habit Tracker API. These are mock responses for now, live endpoints coming soon.
+              Try out the Habitual Habits API. Select an endpoint and hit Run to see real responses from the live server.
             </p>
             <APIPlayground />
           </section>
@@ -339,7 +371,7 @@ export default function Home() {
                 <div>
                   <h3 className="text-xl font-semibold text-[var(--text-primary)]">VAR Technical Manager · Sportec Solutions</h3>
                   <p className="text-[var(--text-secondary)] text-base mt-1">
-                    Set up, monitored, and troubleshot technical video systems for MLS and international matches. Ensured 100% uptime of VAR and MSR equipment and coordinated seamlessly with referees and broadcast staff.
+                    Deployed, monitored, and troubleshot live technical video systems for MLS and international matches under zero-downtime requirements. Managed real-time incident response across VAR and MSR equipment, coordinated with referees and broadcast staff, and maintained 100% operational uptime across every match assigned.
                   </p>
                 </div>
               </div>
@@ -348,7 +380,7 @@ export default function Home() {
                 <div>
                   <h3 className="text-xl font-semibold text-[var(--text-primary)]">Data Entry Operator · Amazon</h3>
                   <p className="text-[var(--text-secondary)] text-base mt-1">
-                    Managed high-volume data entry with 99.8% accuracy across multiple systems. Streamlined digital recordkeeping and consistently exceeded productivity benchmarks.
+                    Processed high-volume data across multiple internal systems with 99.8% accuracy. Identified and eliminated inefficiencies in digital recordkeeping workflows, consistently exceeding productivity benchmarks while maintaining data integrity.
                   </p>
                 </div>
               </div>
