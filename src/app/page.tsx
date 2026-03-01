@@ -188,13 +188,13 @@ export default function Home() {
           {/* About */}
           <section id="about" className="scroll-mt-16 space-y-4 text-base sm:text-lg text-[var(--text-secondary)]">
             <p>
-              I build backend systems with <span className="text-[var(--text-primary)]">Python</span>, <span className="text-[var(--text-primary)]">FastAPI</span>, <span className="text-[var(--text-primary)]">Docker</span>, and <span className="text-[var(--text-primary)]">PostgreSQL</span>, focused on clean architecture, secure authentication, and infrastructure that holds up in production.
+              I like building things that work well and stay up. Most of what I build runs on <span className="text-[var(--text-primary)]">Python</span>, <span className="text-[var(--text-primary)]">FastAPI</span>, <span className="text-[var(--text-primary)]">Docker</span>, and <span className="text-[var(--text-primary)]">PostgreSQL</span>, with a focus on getting the backend right: clean APIs, solid auth, and infrastructure I can actually trust.
             </p>
             <p>
-              I&apos;m currently finishing my <span className="text-[var(--text-primary)]">BS in Computer Science</span> while building full-stack projects that go beyond coursework. My work as a VAR Technical Manager, maintaining 100% uptime on live broadcast systems under real-time pressure, gave me a sharp instinct for reliability, monitoring, and operating systems where failure isn&apos;t an option.
+              I&apos;m wrapping up my <span className="text-[var(--text-primary)]">BS in Computer Science</span> and spending most of my free time building full-stack projects. Before this, I worked as a VAR Technical Manager keeping live broadcast systems running during MLS matches, so I learned early what it means when something absolutely cannot go down.
             </p>
             <p>
-              I&apos;m actively looking for <span className="text-[var(--text-primary)]">backend or full-stack engineering roles</span> where I can contribute to production systems and grow as an engineer.{' '}
+              I&apos;m looking for <span className="text-[var(--text-primary)]">backend or full-stack engineering roles</span> where I can ship real features and keep learning.{' '}
               <a
                 href="https://www.linkedin.com/in/christopher-prempeh/"
                 target="_blank"
@@ -250,7 +250,7 @@ export default function Home() {
             >
               <h3 className="text-2xl font-bold text-[var(--text-primary)]">habitual habits</h3>
               <p className="text-[var(--text-secondary)] mt-2 text-base">
-                A habit tracking API I built to get better at backend development. You can create habits, log completions, and track streaks — all behind JWT auth. I wrote a full pytest suite for it too, covering auth flows, CRUD, and the streak logic. Dockerized and ready to deploy.
+                A habit tracking API I built to get better at backend development. You can create habits, log completions, and track streaks, all behind JWT auth. I wrote a full pytest suite for it too, covering auth flows, CRUD, and the streak logic. Dockerized and ready to deploy.
               </p>
               <div className="flex flex-wrap gap-2 mt-4">
                 {['FastAPI', 'Python', 'JWT Auth', 'Docker', 'SQLAlchemy', 'Pydantic', 'SQLite', 'pytest'].map((tag) => (
@@ -282,7 +282,7 @@ export default function Home() {
             >
               <h3 className="text-2xl font-bold text-[var(--text-primary)]">fantasy football app</h3>
               <p className="text-[var(--text-secondary)] mt-2 text-base">
-                Built this because I needed a better way to prep for my fantasy draft. It&apos;s got a sortable draftboard, tier rankings, favorites by year, and stat columns for rushing, receiving, and passing. FastAPI serves the player data and the Next.js frontend handles all the filtering and sorting live — no page reloads.
+                Built this because I needed a better way to prep for my fantasy draft. It&apos;s got a sortable draftboard, tier rankings, favorites by year, and stat columns for rushing, receiving, and passing. FastAPI serves the player data and the Next.js frontend handles all the filtering and sorting live. No page reloads.
               </p>
               <div className="flex flex-wrap gap-2 mt-4">
                 {['FastAPI', 'Next.js', 'TypeScript', 'Tailwind CSS', 'React', 'Python'].map((tag) => (
@@ -340,17 +340,32 @@ export default function Home() {
                   </span>
                 ))}
               </div>
-              <a
-                href="https://github.com/ckwame-jpg/taskboard"
-                className="inline-block mt-4 text-[var(--text-primary)] hover:opacity-80 transition-transform hover:scale-110"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="GitHub Project Repository"
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 transition-all duration-300 hover:scale-110" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12 0C5.373 0 0 5.373 0 12a12.013 12.013 0 008.208 11.385c.6.111.82-.26.82-.577v-2.065c-3.338.726-4.043-1.61-4.043-1.61-.546-1.387-1.334-1.756-1.334-1.756-1.091-.745.083-.73.083-.73 1.205.084 1.84 1.238 1.84 1.238 1.072 1.835 2.812 1.305 3.498.998.108-.777.419-1.305.76-1.604-2.665-.304-5.466-1.333-5.466-5.933 0-1.31.469-2.381 1.235-3.22-.123-.304-.535-1.523.117-3.176 0 0 1.007-.322 3.3 1.23a11.487 11.487 0 016.003 0c2.292-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.872.12 3.176.769.839 1.233 1.91 1.233 3.22 0 4.61-2.803 5.625-5.475 5.921.43.37.813 1.103.813 2.222v3.293c0 .32.218.694.825.576A12.015 12.015 0 0024 12c0-6.627-5.373-12-12-12z"/>
-                </svg>
-              </a>
+              <div className="flex items-center space-x-4 mt-4">
+                <a
+                  href="https://taskboard-chris-prempehs-projects.vercel.app"
+                  className="inline-block text-[var(--text-primary)] hover:opacity-80 transition-transform hover:scale-110"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Live Demo"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 transition-all duration-300 hover:scale-110" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M14 3h7v7h-2V6.414l-9.293 9.293-1.414-1.414L17.586 5H14V3z" />
+                    <path d="M5 5h5V3H3v7h2V5zm0 14v-5H3v7h7v-2H5z" />
+                  </svg>
+                </a>
+
+                <a
+                  href="https://github.com/ckwame-jpg/taskboard"
+                  className="inline-block text-[var(--text-primary)] hover:opacity-80 transition-transform hover:scale-110"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="GitHub Project Repository"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 transition-all duration-300 hover:scale-110" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 0C5.373 0 0 5.373 0 12a12.013 12.013 0 008.208 11.385c.6.111.82-.26.82-.577v-2.065c-3.338.726-4.043-1.61-4.043-1.61-.546-1.387-1.334-1.756-1.334-1.756-1.091-.745.083-.73.083-.73 1.205.084 1.84 1.238 1.84 1.238 1.072 1.835 2.812 1.305 3.498.998.108-.777.419-1.305.76-1.604-2.665-.304-5.466-1.333-5.466-5.933 0-1.31.469-2.381 1.235-3.22-.123-.304-.535-1.523.117-3.176 0 0 1.007-.322 3.3 1.23a11.487 11.487 0 016.003 0c2.292-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.872.12 3.176.769.839 1.233 1.91 1.233 3.22 0 4.61-2.803 5.625-5.475 5.921.43.37.813 1.103.813 2.222v3.293c0 .32.218.694.825.576A12.015 12.015 0 0024 12c0-6.627-5.373-12-12-12z"/>
+                  </svg>
+                </a>
+              </div>
             </motion.div>
           </section>
 
