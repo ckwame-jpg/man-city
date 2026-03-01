@@ -168,7 +168,7 @@ export default function APIPlayground() {
         >
           {api.endpoints.map((ep, i) => (
             <option key={i} value={i} className="bg-[var(--bg-primary)]">
-              {ep.path} — {ep.description}
+              {ep.path} - {ep.description}
             </option>
           ))}
         </select>

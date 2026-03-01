@@ -152,7 +152,7 @@ export default function TerminalIntro() {
         }
         if (line.type === 'result') {
           if (i === 1) {
-            // "Chris Prempeh" — render as h1
+            // "Chris Prempeh" - render as h1
             return (
               <h1 key={i} className="text-6xl font-bold text-[var(--text-primary)]">
                 {line.text}
@@ -162,7 +162,7 @@ export default function TerminalIntro() {
               </h1>
             );
           }
-          // "Technical Manager" — render as h2
+          // "Technical Manager" - render as h2
           return (
             <h2 key={i} className="text-xl text-[var(--text-secondary)] mt-2">
               {line.text}
