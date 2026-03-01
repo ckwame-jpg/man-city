@@ -342,7 +342,7 @@ export default function Home() {
               </div>
               <div className="flex items-center space-x-4 mt-4">
                 <a
-                  href="https://taskboard-chris-prempehs-projects.vercel.app"
+                  href="https://taskboard-jade-nine.vercel.app"
                   className="inline-block text-[var(--text-primary)] hover:opacity-80 transition-transform hover:scale-110"
                   target="_blank"
                   rel="noopener noreferrer"
