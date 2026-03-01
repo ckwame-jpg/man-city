@@ -416,7 +416,7 @@ export default function Home() {
             <h2 className="text-2xl font-semibold text-[var(--text-primary)] mb-6">experience</h2>
             <div className="space-y-10 sm:ml-0 leading-loose">
               <div className="grid sm:grid-cols-[150px_1fr] sm:gap-10 items-start">
-                <p className="text-base text-[var(--text-muted)] mb-1 sm:mb-0">Oct 2024 — Present</p>
+                <p className="text-base text-[var(--text-muted)] mb-1 sm:mb-0">Oct 2024 - Present</p>
                 <div>
                   <h3 className="text-xl font-semibold text-[var(--text-primary)]">VAR Technical Manager · Sportec Solutions</h3>
                   <p className="text-[var(--text-secondary)] text-base mt-1">
@@ -425,7 +425,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="grid sm:grid-cols-[150px_1fr] sm:gap-10 items-start">
-                <p className="text-base text-[var(--text-muted)] mb-1 sm:mb-0">2021 — 2023</p>
+                <p className="text-base text-[var(--text-muted)] mb-1 sm:mb-0">2021 - 2023</p>
                 <div>
                   <h3 className="text-xl font-semibold text-[var(--text-primary)]">Data Entry Operator · Amazon</h3>
                   <p className="text-[var(--text-secondary)] text-base mt-1">
