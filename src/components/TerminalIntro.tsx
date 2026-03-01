@@ -70,13 +70,49 @@ export default function TerminalIntro() {
           });
           await sleep(300);
         } else if (line.type === 'result') {
-          // Result appears instantly
-          setLines((prev) => [...prev, { type: 'result', text: line.text, done: true }]);
+          // Type result character by character
+          setLines((prev) => [...prev, { type: 'result', text: '', done: false }]);
+          for (let c = 0; c < line.text.length; c++) {
+            if (cancelled) return;
+            await sleep(35);
+            setLines((prev) => {
+              const updated = [...prev];
+              updated[updated.length - 1] = {
+                type: 'result',
+                text: line.text.slice(0, c + 1),
+                done: false,
+              };
+              return updated;
+            });
+          }
+          setLines((prev) => {
+            const updated = [...prev];
+            updated[updated.length - 1] = { ...updated[updated.length - 1], done: true };
+            return updated;
+          });
           await sleep(400);
         } else if (line.type === 'tagline') {
-          // Tagline fades in (handled by CSS)
+          // Type tagline character by character
           await sleep(200);
-          setLines((prev) => [...prev, { type: 'tagline', text: line.text, done: true }]);
+          setLines((prev) => [...prev, { type: 'tagline', text: '', done: false }]);
+          for (let c = 0; c < line.text.length; c++) {
+            if (cancelled) return;
+            await sleep(20);
+            setLines((prev) => {
+              const updated = [...prev];
+              updated[updated.length - 1] = {
+                type: 'tagline',
+                text: line.text.slice(0, c + 1),
+                done: false,
+              };
+              return updated;
+            });
+          }
+          setLines((prev) => {
+            const updated = [...prev];
+            updated[updated.length - 1] = { ...updated[updated.length - 1], done: true };
+            return updated;
+          });
         }
       }
 
@@ -117,19 +153,32 @@ export default function TerminalIntro() {
         if (line.type === 'result') {
           if (i === 1) {
             // "Chris Prempeh" — render as h1
-            return <h1 key={i} className="text-6xl font-bold text-[var(--text-primary)]">{line.text}</h1>;
+            return (
+              <h1 key={i} className="text-6xl font-bold text-[var(--text-primary)]">
+                {line.text}
+                {!line.done && (
+                  <span className={`font-mono text-4xl ${cursorVisible ? 'opacity-100' : 'opacity-0'}`}>_</span>
+                )}
+              </h1>
+            );
           }
           // "Technical Manager" — render as h2
-          return <h2 key={i} className="text-xl text-[var(--text-secondary)] mt-2">{line.text}</h2>;
+          return (
+            <h2 key={i} className="text-xl text-[var(--text-secondary)] mt-2">
+              {line.text}
+              {!line.done && (
+                <span className={`font-mono ${cursorVisible ? 'opacity-100' : 'opacity-0'}`}>_</span>
+              )}
+            </h2>
+          );
         }
         if (line.type === 'tagline') {
           return (
-            <p
-              key={i}
-              className="text-[var(--text-muted)] mt-4 text-base mb-22 animate-fade-in"
-              style={{ animation: 'fadeIn 0.6s ease-in forwards' }}
-            >
+            <p key={i} className="text-[var(--text-muted)] mt-4 text-base mb-22">
               {line.text}
+              {!line.done && (
+                <span className={`font-mono ${cursorVisible ? 'opacity-100' : 'opacity-0'}`}>_</span>
+              )}
             </p>
           );
         }
