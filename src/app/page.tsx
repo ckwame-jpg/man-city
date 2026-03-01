@@ -16,10 +16,11 @@ const sections = [
 ];
 
 const skillCategories = [
-  { title: 'Backend', skills: ['Python', 'FastAPI', 'REST APIs', 'JWT Auth'] },
-  { title: 'Infrastructure', skills: ['Docker', 'PostgreSQL', 'Vercel', 'CI/CD'] },
+  { title: 'Backend', skills: ['Python', 'FastAPI', 'SQLAlchemy', 'REST APIs', 'JWT Auth', 'WebSockets', 'Pydantic'] },
+  { title: 'Infrastructure', skills: ['Docker', 'PostgreSQL', 'Redis', 'Celery', 'Vercel', 'Render', 'CI/CD'] },
   { title: 'Frontend', skills: ['TypeScript', 'Next.js', 'Tailwind CSS', 'React'] },
-  { title: 'Tools & Practices', skills: ['Git', 'GitHub', 'System Design', 'Agile'] },
+  { title: 'Data & CLI', skills: ['pandas', 'ETL Pipelines', 'Click', 'Rich', 'pytest'] },
+  { title: 'Tools & Practices', skills: ['Git', 'GitHub', 'GitHub Actions', 'System Design', 'Agile'] },
 ];
 
 const staggerContainer = {
