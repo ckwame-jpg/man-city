@@ -378,7 +378,7 @@ export default function Home() {
             >
               <h3 className="text-2xl font-bold text-[var(--text-primary)]">url shortener</h3>
               <p className="text-[var(--text-secondary)] mt-2 text-base">
-                A URL shortener with async click analytics. Shorten links, share them, and see who clicked - device type, referrer, the whole breakdown. Redirects are fast because the analytics processing happens in the background via Celery workers and Redis. The whole stack runs in Docker Compose.
+                A URL shortener with async click analytics. Shorten links, share them, and see who clicked: device type, referrer, the whole breakdown. Redirects are fast because the analytics processing happens in the background via Celery workers and Redis. The whole stack runs in Docker Compose.
               </p>
               <div className="flex flex-wrap gap-2 mt-4">
                 {['FastAPI', 'Redis', 'Celery', 'PostgreSQL', 'Docker', 'Python'].map((tag) => (
